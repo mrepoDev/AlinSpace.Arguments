@@ -1,4 +1,4 @@
-# ![Icon](Assets/Icon.png)
+# ![Icon](Assets/IconSmall.png)
 # FluentArguments
 [![NuGet version (FluentArguments)](https://img.shields.io/nuget/v/AlinSpace.FluentArguments.svg?style=flat-square)](https://www.nuget.org/packages/AlinSpace.FluentArguments/)
 
