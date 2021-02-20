@@ -7,7 +7,7 @@ A simple fluent library for function argument validation.
 # Examples
 
  ```csharp
-# Check if the argument is null.
+// Check if the argument is null.
 string checkedArgument = Argument
     .Wrap(uncheckedArgument, nameof(uncheckedArgument))
     .NotNull();
