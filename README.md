@@ -5,6 +5,8 @@
 
 A simple fluent library for function argument validation.
 
+[NuGet package](https://www.nuget.org/packages/AlinSpace.FluentArguments/)
+
 # Examples
 
  ```csharp
