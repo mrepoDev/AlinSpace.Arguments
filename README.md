@@ -10,8 +10,20 @@ A simple fluent library for function argument validation.
 # Examples
 
  ```csharp
-// Check if the argument is null.
-string checkedArgument = Argument
+// Check if the argument is not null.
+string checkedArgument1 = Argument
     .Wrap(uncheckedArgument, nameof(uncheckedArgument))
-    .NotNull();
+    .IsNotNull();
+    
+// Check if the argument is not null and not empty.
+string checkedArgument2 = Argument
+    .Wrap(uncheckedArgument, nameof(uncheckedArgument))
+    .IsNotNull()
+    .IsNotEmpty();
+    
+// Check if the argument is not null and has the exact length of 5 characters.
+string checkedArgument3 = Argument
+    .Wrap(uncheckedArgument, nameof(uncheckedArgument))
+    .IsNotNull()
+    .IsFuncTrue(s => s.Length == 5);
 ```
