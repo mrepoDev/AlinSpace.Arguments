@@ -32,3 +32,4 @@ string checkedArgument = Argument
 	.Is(s => s.Contains("a"))
 	.IsNot(s => s.Length >= 5);
 ```
+
