@@ -1,4 +1,4 @@
-<img src="https://github.com/onixion/FluentArguments/blob/main/Assets/Icon.png" width="200" height="200">
+<img src="https://github.com/onixion/FluentArguments/blob/main/Assets/Icon.jpg" width="200" height="200">
 
 # FluentArguments
 [![NuGet version (FluentArguments)](https://img.shields.io/nuget/v/AlinSpace.FluentArguments.svg?style=flat-square)](https://www.nuget.org/packages/AlinSpace.FluentArguments/)
