@@ -9,7 +9,7 @@ namespace AlinSpace.FluentArguments.Tests
     public partial class ArgumentWrapperExtensions
     {
         [Fact]
-        public void IsNotEmpty()
+        public void IsNotEmpty_()
         {
             void TestMethod(string uncheckedArgument)
             {
@@ -24,7 +24,7 @@ namespace AlinSpace.FluentArguments.Tests
         }
 
         [Fact]
-        public void IsNotEmpty2()
+        public void IsNotEmpty_2()
         {
             void TestMethod(string uncheckedArgument)
             {
@@ -37,7 +37,7 @@ namespace AlinSpace.FluentArguments.Tests
         }
 
         [Fact]
-        public void IsNotWhiteSpace()
+        public void IsNotWhiteSpace_1()
         {
             void TestMethod(string uncheckedArgument)
             {
@@ -52,7 +52,7 @@ namespace AlinSpace.FluentArguments.Tests
         }
 
         [Fact]
-        public void IsNotWhiteSpace2()
+        public void IsNotWhiteSpace_2()
         {
             void TestMethod(string uncheckedArgument)
             {

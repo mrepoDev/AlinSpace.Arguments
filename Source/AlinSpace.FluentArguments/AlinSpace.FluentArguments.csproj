@@ -12,15 +12,15 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/onixion/FluentArguments</RepositoryUrl>
     <Copyright>Copyright © 2021 Alin Andersen</Copyright>
-    <PackageIcon>Icon.png</PackageIcon>
+    <PackageIcon>Icon.jpg</PackageIcon>
     <PackageId>AlinSpace.FluentArguments</PackageId>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0.0</FileVersion>
-    <Version>1.1.0</Version>
+    <AssemblyVersion>1.1.2.0</AssemblyVersion>
+    <FileVersion>1.1.2.0</FileVersion>
+    <Version>1.1.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Icon.png">
+    <None Include="Icon.jpg">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

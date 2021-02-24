@@ -8,10 +8,8 @@ namespace AlinSpace.FluentArguments.Tests
     /// </summary>
     public partial class ArgumentWrapperExtensions
     {
-        #region GetOrDefault
-
         [Fact]
-        public void GetOrDefault()
+        public void GetOrDefault_1()
         {
             void TestMethod(string uncheckedArgument)
             {
@@ -26,7 +24,7 @@ namespace AlinSpace.FluentArguments.Tests
         }
 
         [Fact]
-        public void GetOrDefault2()
+        public void GetOrDefault_2()
         {
             void TestMethod(string uncheckedArgument)
             {
@@ -41,7 +39,7 @@ namespace AlinSpace.FluentArguments.Tests
         }
 
         [Fact]
-        public void GetOrDefault3()
+        public void GetOrDefault_3()
         {
             void TestMethod(int uncheckedArgument)
             {
@@ -56,7 +54,7 @@ namespace AlinSpace.FluentArguments.Tests
         }
 
         [Fact]
-        public void GetOrDefault4()
+        public void GetOrDefault_4()
         {
             void TestMethod(int uncheckedArgument)
             {
@@ -71,7 +69,7 @@ namespace AlinSpace.FluentArguments.Tests
         }
 
         [Fact]
-        public void GetOrDefault5()
+        public void GetOrDefault_5()
         {
             void TestMethod(int uncheckedArgument)
             {
@@ -86,7 +84,7 @@ namespace AlinSpace.FluentArguments.Tests
         }
 
         [Fact]
-        public void GetOrDefault6()
+        public void GetOrDefault_6()
         {
             void TestMethod(string uncheckedArgument)
             {
@@ -100,12 +98,8 @@ namespace AlinSpace.FluentArguments.Tests
             TestMethod(null);
         }
 
-        #endregion
-
-        #region NotNull
-
         [Fact]
-        public void NotNull()
+        public void NotNull_1()
         {
             void TestMethod(string uncheckedArgument)
             {
@@ -120,7 +114,7 @@ namespace AlinSpace.FluentArguments.Tests
         }
 
         [Fact]
-        public void NotNull2()
+        public void NotNull_2()
         {
             void TestMethod(string uncheckedArgument)
             {
@@ -132,12 +126,8 @@ namespace AlinSpace.FluentArguments.Tests
             Assert.Throws<ArgumentNullException>(() => TestMethod(null));
         }
 
-        #endregion
-
-        #region NotDefault
-
         [Fact]
-        public void NotDefault()
+        public void NotDefault_1()
         {
             void TestMethod(int uncheckedArgument)
             {
@@ -152,7 +142,7 @@ namespace AlinSpace.FluentArguments.Tests
         }
 
         [Fact]
-        public void NotDefault2()
+        public void NotDefault_2()
         {
             void TestMethod(int uncheckedArgument)
             {
@@ -164,20 +154,14 @@ namespace AlinSpace.FluentArguments.Tests
             Assert.Throws<ArgumentException>(() => TestMethod(0));
         }
 
-        #endregion
-
-        #region IsFunc*
-
-        #region IsFuncTrue
-
         [Fact]
-        public void IsFuncTrue()
+        public void Is_1()
         {
             void TestMethod(string uncheckedArgument)
             {
                 string checkedArgument = Argument
                     .Wrap(uncheckedArgument, nameof(uncheckedArgument))
-                    .IsFuncTrue(() => true);
+                    .Is(_ => true);
 
                 Assert.Equal("Test", checkedArgument);
             }
@@ -186,30 +170,26 @@ namespace AlinSpace.FluentArguments.Tests
         }
 
         [Fact]
-        public void IsFuncTrue2()
+        public void Is_2()
         {
             void TestMethod(string uncheckedArgument)
             {
                 Argument
                     .Wrap(uncheckedArgument, nameof(uncheckedArgument))
-                    .IsFuncTrue(() => false);
+                    .Is(_ => false);
             }
 
             Assert.Throws<ArgumentException>(() => TestMethod("Test"));
         }
 
-        #endregion
-
-        #region IsFuncFalse
-
         [Fact]
-        public void IsFuncFalse()
+        public void IsNot_1()
         {
             void TestMethod(string uncheckedArgument)
             {
                 string checkedArgument = Argument
                     .Wrap(uncheckedArgument, nameof(uncheckedArgument))
-                    .IsFuncFalse(() => false);
+                    .IsNot(_ => false);
 
                 Assert.Equal("Test", checkedArgument);
             }
@@ -218,20 +198,16 @@ namespace AlinSpace.FluentArguments.Tests
         }
 
         [Fact]
-        public void IsFuncFalse2()
+        public void IsNot_2()
         {
             void TestMethod(string uncheckedArgument)
             {
                 Argument
                     .Wrap(uncheckedArgument, nameof(uncheckedArgument))
-                    .IsFuncFalse(() => true);
+                    .IsNot(_ => true);
             }
 
             Assert.Throws<ArgumentException>(() => TestMethod("Test"));
         }
-
-        #endregion
-
-        #endregion
     }
 }

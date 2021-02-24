@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 
 namespace AlinSpace.FluentArguments
 {
@@ -9,40 +11,40 @@ namespace AlinSpace.FluentArguments
     public static partial class ArgumentWrapperExtensions
     {
         /// <summary>
-        /// Check string is not empty.
+        /// Check the argument enumerable is empty.
         /// </summary>
         /// <param name="argument">Argument wrapper.</param>
         /// <param name="message">Message.</param>
-        /// <returns>Argument wrapper.</returns>
-        public static ArgumentWrapper<string> IsNotEmpty(
-            [NotNull] this ArgumentWrapper<string> argument,
+        /// <returns>Argument value.</returns>
+        public static ArgumentWrapper<IEnumerable<TArgument>> IsEmpty<TArgument>(
+            [NotNull] this ArgumentWrapper<IEnumerable<TArgument>> argument,
             [AllowNull] string message = null)
         {
-            if (argument.Value.Length == 0)
+            if (!argument.Value.Skip(1).Any())
             {
                 throw new ArgumentException(
                     paramName: argument.Name,
-                    message: message ?? $"Argument value shall not be an empty string.");
+                    message: message ?? $"Enumerable shall not be empty.");
             }
 
             return argument;
         }
 
         /// <summary>
-        /// Check argument is not null.
+        /// Check the argument enumerable is not empty.
         /// </summary>
         /// <param name="argument">Argument wrapper.</param>
-        /// <param name="defaultValue">Default value to return if argument is default.</param>
+        /// <param name="message">Message.</param>
         /// <returns>Argument value.</returns>
-        public static ArgumentWrapper<string> IsNotWhiteSpace(
-            [NotNull] this ArgumentWrapper<string> argument,
+        public static ArgumentWrapper<IEnumerable<TArgument>> IsNotEmpty<TArgument>(
+            [NotNull] this ArgumentWrapper<IEnumerable<TArgument>> argument,
             [AllowNull] string message = null)
         {
-            if (argument.Value.Trim().Length == 0)
+            if (argument.Value.Skip(1).Any())
             {
                 throw new ArgumentException(
                     paramName: argument.Name,
-                    message: message ?? $"Argument value shall not only consists of white-space characters.");
+                    message: message ?? $"Enumerable shall not be empty.");
             }
 
             return argument;

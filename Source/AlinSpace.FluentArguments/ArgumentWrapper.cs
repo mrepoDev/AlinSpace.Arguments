@@ -30,10 +30,10 @@
         /// <summary>
         /// Implicit cast.
         /// </summary>
-        /// <param name="argumentWrap">Argument wrap.</param>
-        public static implicit operator TArgument(ArgumentWrapper<TArgument> argumentWrap)
+        /// <param name="argument">Argument wrap.</param>
+        public static implicit operator TArgument(ArgumentWrapper<TArgument> argument)
         {
-            return argumentWrap.Value ?? default;
+            return argument.Value ?? default;
         }
     }
 }
