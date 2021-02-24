@@ -29,7 +29,7 @@ The fluent design allows the validation methods to be chained together easily.
 string checkedArgument = Argument
     .Wrap(uncheckedArgument)
     .IsNotNull()
-	.Is(s => s.Contains("a"))
-	.IsNot(s => s.Length >= 5);
+    .Is(s => s.Contains("a"))
+    .IsNot(s => s.Length >= 5);
 ```
 
