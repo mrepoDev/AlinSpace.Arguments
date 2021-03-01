@@ -20,8 +20,8 @@ if(argument == null)
 
 The problem with this is, that it does not scale well when the validation logic gets more complex.
 Moreover, it is weird to have to write *equal null* for *not null*, which might introduce bugs, 
-especially when argument validation checks are performed everywhere. Also, we want to have consistent
-argument exception messages that add details to the failed argument validation.
+especially when argument validation checks are performed everywhere. 
+Also, we want to have consistent argument exception messages that add details to the failed argument validation.
 
 Here is a more complex argument validation:
 
