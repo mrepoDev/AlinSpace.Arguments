@@ -19,10 +19,6 @@ if(argument == null)
 ```
 
 The problem with this is, that it does not scale well when the validation logic gets more complex.
-Moreover, it is weird to have to write *equal null* for *not null*, which might introduce bugs, 
-especially when argument validation checks are performed everywhere. 
-Also, we want to have consistent argument exception messages that add details to the failed argument validation.
-
 Here is a more complex argument validation:
 
 ```csharp
@@ -41,11 +37,11 @@ With the **FluentArguments** library the code could be rewritten to this:
 Argument
     .Wrap(argument, nameof(argument))
     .IsNotNull()
-    .Is(s => s.Length >= 5);
+    .Is(s => s.Length >= 5, message: $"String can't be shorter than 5 characters.");
 ```
 
 It is much more compact, easier to read and understand, flexible, and more consistent. 
-Custom validation constraints can be added in form of extension methods or as a predicate function. 
+Custom validation constraints can be added in form of extension methods or as a predicate functions. 
 It is also possible to retrieve the checked argument after validation, like this:
 
 ```csharp
@@ -83,11 +79,11 @@ string checkedArgument = Argument
 
 ## Custom validation rules
 
-There are two ways custom validation rules can be added. 
+There are two ways to add custom validation rules. 
 
 ### Predicate Function
 
-The easier way is to simply pass a predicate function:
+The trivial way is to simply pass a predicate function:
 
 ```csharp
 bool MyPredicateFunction<TArgument>(TArgument argument)
@@ -120,5 +116,3 @@ Argument
     .Wrap(uncheckedArgument)
     .MyArgumentWrapperExtensions();
 ```
-
-
