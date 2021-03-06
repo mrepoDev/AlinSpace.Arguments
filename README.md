@@ -38,6 +38,17 @@ if (argument.Length < 5)
 With the **FluentArguments** library the code could be rewritten to this:
 
 ```csharp
+Argument
+    .Wrap(argument, nameof(argument))
+    .IsNotNull()
+    .Is(s => s.Length >= 5);
+```
+
+It is much more compact, easier to read and understand, flexible, and more consistent. 
+Custom validation constraints can be added in form of extension methods or as a predicate function. 
+It is also possible to retrieve the checked argument after validation, like this:
+
+```csharp
 string checkedArgument = Argument
     .Wrap(uncheckedArgument, nameof(uncheckedArgument))
     .IsNotNull()
@@ -69,4 +80,45 @@ string checkedArgument = Argument
     .Is(s => s.Contains("a"))
     .IsNot(s => s.Length >= 5);
 ```
+
+## Custom validation rules
+
+There are two ways custom validation rules can be added. 
+
+### Predicate Function
+
+The easier way is to simply pass a predicate function:
+
+```csharp
+bool MyPredicateFunction<TArgument>(TArgument argument)
+{
+    // Validate the given argument, return true on successful validation; false otherwise.
+}
+
+Argument
+    .Wrap(uncheckedArgument)
+    .Is(MyPredicateFunction);
+```
+
+### Extension method
+
+If you have an argument validation rule that you would like to define in a class and use throughout your codebase,
+than custom extension methods might be a better way of doing it:
+
+```csharp
+public static class MyArgumentWrapperExtensions
+{
+    public static ArgumentWrapper<TArgument> MyCustomRule(ArgumentWrapper<TArgument> argument)
+    {
+        // Validate the given argument here and throw an exception when the rule is violated.
+	
+	return argument;
+    }
+}
+
+Argument
+    .Wrap(uncheckedArgument)
+    .MyArgumentWrapperExtensions();
+```
+
 
