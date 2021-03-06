@@ -81,7 +81,7 @@ string checkedArgument = Argument
 
 There are two ways to add custom validation rules. 
 
-### Predicate Function
+### 1 Predicate Function
 
 The trivial way is to simply pass a predicate function:
 
@@ -96,7 +96,7 @@ Argument
     .Is(MyPredicateFunction);
 ```
 
-### Extension method
+### 2 Extension method
 
 If you have an argument validation rule that you would like to define in a class and use throughout your codebase,
 than custom extension methods might be a better way of doing it:
