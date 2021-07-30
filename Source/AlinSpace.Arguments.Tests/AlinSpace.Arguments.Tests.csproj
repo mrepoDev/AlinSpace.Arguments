@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AlinSpace.FluentArguments\AlinSpace.FluentArguments.csproj" />
+    <ProjectReference Include="..\AlinSpace.Arguments\AlinSpace.Arguments.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,11 +1,11 @@
-<img src="https://github.com/onixion/FluentArguments/blob/main/Assets/Icon.jpg" width="200" height="200">
+<img src="https://github.com/onixion/AlinSpace.Arguments/blob/main/Assets/Icon.png" width="200" height="200">
 
-# FluentArguments
-[![NuGet version (FluentArguments)](https://img.shields.io/nuget/v/AlinSpace.FluentArguments.svg?style=flat-square)](https://www.nuget.org/packages/AlinSpace.FluentArguments/)
+# AlinSpace.Arguments
+[![NuGet version (AlinSpace.Arguments)](https://img.shields.io/nuget/v/AlinSpace.Arguments.svg?style=flat-square)](https://www.nuget.org/packages/AlinSpace.Arguments/)
 
 A simple fluent library for function argument validation.
 
-[NuGet package](https://www.nuget.org/packages/AlinSpace.FluentArguments/)
+[NuGet package](https://www.nuget.org/packages/AlinSpace.Arguments/)
 
 ## Why?
 
@@ -31,7 +31,7 @@ if (argument.Length < 5)
     throw new ArgumentException(nameof(argument), $"String can't be shorter than 5 characters.");
 ```
 
-With the **FluentArguments** library the code could be rewritten to this:
+With the **AlinSpace.Arguments** library the code could be rewritten to this:
 
 ```csharp
 Argument

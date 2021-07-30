@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
-namespace AlinSpace.FluentArguments
+namespace AlinSpace.Arguments
 {
     /// <summary>
     /// Extensions for <see cref="ArgumentWrapper{TArgument}"/>.
@@ -17,7 +17,7 @@ namespace AlinSpace.FluentArguments
         /// <param name="defaultValue">Default value to return if argument is default.</param>
         /// <returns>Argument value.</returns>
         public static TArgument GetOrDefault<TArgument>(
-            [NotNull] this ArgumentWrapper<TArgument> argument,
+            this ArgumentWrapper<TArgument> argument,
             TArgument defaultValue = default)
         {
             if (argument == null || EqualityComparer<TArgument>.Default.Equals(argument.Value, default))
@@ -34,8 +34,8 @@ namespace AlinSpace.FluentArguments
         /// <param name="message">Message.</param>
         /// <returns>Argument wrapper.</returns>
         public static ArgumentWrapper<TArgument> IsNotNull<TArgument>(
-            [NotNull] this ArgumentWrapper<TArgument> argument,
-            [AllowNull] string message = null)
+            this ArgumentWrapper<TArgument> argument,
+            string message = null)
         {
             if (argument == null)
                 throw new ArgumentNullException(nameof(argument));
@@ -58,8 +58,8 @@ namespace AlinSpace.FluentArguments
         /// <param name="message">Message.</param>
         /// <returns>Argument wrapper.</returns>
         public static ArgumentWrapper<TArgument> IsNotDefault<TArgument>(
-            [NotNull] this ArgumentWrapper<TArgument> argument,
-            [AllowNull] string message = null)
+            this ArgumentWrapper<TArgument> argument,
+            string message = null)
         {
             if (EqualityComparer<TArgument>.Default.Equals(argument.Value, default))
             {
@@ -80,9 +80,9 @@ namespace AlinSpace.FluentArguments
         /// <param name="message">Message.</param>
         /// <returns>Argument wrapper.</returns>
         public static ArgumentWrapper<TArgument> Is<TArgument>(
-            [NotNull] this ArgumentWrapper<TArgument> argument, 
-            [NotNull] Predicate<TArgument> predicate, 
-            [AllowNull] string message = null)
+            this ArgumentWrapper<TArgument> argument, 
+            Predicate<TArgument> predicate, 
+            string message = null)
         {
             if (argument == null)
                 throw new ArgumentNullException(nameof(argument));
@@ -109,9 +109,9 @@ namespace AlinSpace.FluentArguments
         /// <param name="message">Message.</param>
         /// <returns>Argument wrapper.</returns>
         public static ArgumentWrapper<TArgument> IsNot<TArgument>(
-            [NotNull] this ArgumentWrapper<TArgument> argument,
-            [NotNull] Predicate<TArgument> predicate,
-            [AllowNull] string message = null)
+            this ArgumentWrapper<TArgument> argument,
+            Predicate<TArgument> predicate,
+            string message = null)
         {
             if (argument == null)
                 throw new ArgumentNullException(nameof(argument));

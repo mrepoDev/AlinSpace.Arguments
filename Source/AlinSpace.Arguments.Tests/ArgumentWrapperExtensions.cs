@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace AlinSpace.FluentArguments.Tests
+namespace AlinSpace.Arguments.Tests
 {
     /// <summary>
     /// Unit tests for <see cref="ArgumentWrapper{TArgument}"/>.

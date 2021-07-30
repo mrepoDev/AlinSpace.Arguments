@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace AlinSpace.FluentArguments
+namespace AlinSpace.Arguments
 {
     /// <summary>
     /// Extensions for <see cref="ArgumentWrapper{TArgument}"/> with type <see cref="string"/>.
@@ -15,8 +15,8 @@ namespace AlinSpace.FluentArguments
         /// <param name="message">Message.</param>
         /// <returns>Argument wrapper.</returns>
         public static ArgumentWrapper<string> IsNotEmpty(
-            [NotNull] this ArgumentWrapper<string> argument,
-            [AllowNull] string message = null)
+            this ArgumentWrapper<string> argument,
+            string message = null)
         {
             if (argument.Value.Length == 0)
             {
@@ -35,8 +35,8 @@ namespace AlinSpace.FluentArguments
         /// <param name="defaultValue">Default value to return if argument is default.</param>
         /// <returns>Argument value.</returns>
         public static ArgumentWrapper<string> IsNotWhiteSpace(
-            [NotNull] this ArgumentWrapper<string> argument,
-            [AllowNull] string message = null)
+            this ArgumentWrapper<string> argument,
+            string message = null)
         {
             if (argument.Value.Trim().Length == 0)
             {

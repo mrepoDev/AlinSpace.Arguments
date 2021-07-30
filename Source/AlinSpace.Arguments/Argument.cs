@@ -1,4 +1,4 @@
-﻿namespace AlinSpace.FluentArguments
+﻿namespace AlinSpace.Arguments
 {
     /// <summary>
     /// Argument.

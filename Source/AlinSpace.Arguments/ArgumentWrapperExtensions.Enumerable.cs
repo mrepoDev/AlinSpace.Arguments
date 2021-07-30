@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
-namespace AlinSpace.FluentArguments
+namespace AlinSpace.Arguments
 {
     /// <summary>
     /// Extensions for <see cref="ArgumentWrapper{TArgument}"/> with type <see cref="string"/>.
@@ -17,8 +17,8 @@ namespace AlinSpace.FluentArguments
         /// <param name="message">Message.</param>
         /// <returns>Argument value.</returns>
         public static ArgumentWrapper<IEnumerable<TArgument>> IsEmpty<TArgument>(
-            [NotNull] this ArgumentWrapper<IEnumerable<TArgument>> argument,
-            [AllowNull] string message = null)
+            this ArgumentWrapper<IEnumerable<TArgument>> argument,
+            string message = null)
         {
             if (!argument.Value.Skip(1).Any())
             {
@@ -37,8 +37,8 @@ namespace AlinSpace.FluentArguments
         /// <param name="message">Message.</param>
         /// <returns>Argument value.</returns>
         public static ArgumentWrapper<IEnumerable<TArgument>> IsNotEmpty<TArgument>(
-            [NotNull] this ArgumentWrapper<IEnumerable<TArgument>> argument,
-            [AllowNull] string message = null)
+            this ArgumentWrapper<IEnumerable<TArgument>> argument,
+            string message = null)
         {
             if (argument.Value.Skip(1).Any())
             {
