@@ -1,4 +1,6 @@
-﻿namespace AlinSpace.Arguments
+﻿using System;
+
+namespace AlinSpace.Arguments
 {
     /// <summary>
     /// Argument wrapper.
@@ -30,10 +32,10 @@
         /// <summary>
         /// Implicit cast.
         /// </summary>
-        /// <param name="argument">Argument wrap.</param>
+        /// <param name="argument">Argument wrapper.</param>
         public static implicit operator TArgument(ArgumentWrapper<TArgument> argument)
         {
-            return argument.Value ?? default;
+            return argument.Value ?? throw new ArgumentNullException($"Argument has no value.");
         }
     }
 }

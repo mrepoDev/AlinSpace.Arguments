@@ -14,9 +14,9 @@
     <Copyright>Copyright © 2021 Alin Andersen</Copyright>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageId>AlinSpace.Arguments</PackageId>
-    <AssemblyVersion>5.0.0.0</AssemblyVersion>
-    <FileVersion>5.0.0.0</FileVersion>
-    <Version>5.0.0.0</Version>
+    <AssemblyVersion>5.0.1.0</AssemblyVersion>
+    <FileVersion>5.0.1.0</FileVersion>
+    <Version>5.0.1</Version>
 	<LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
