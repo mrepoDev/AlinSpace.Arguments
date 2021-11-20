@@ -35,7 +35,10 @@ namespace AlinSpace.Arguments
         /// <param name="argument">Argument wrapper.</param>
         public static implicit operator TArgument(ArgumentWrapper<TArgument> argument)
         {
-            return argument.Value ?? throw new ArgumentNullException($"Argument has no value.");
+            if (argument.Value == null)
+                throw new ArgumentNullException($"Argument has no value.");
+
+            return argument.Value;
         }
     }
 }
